@@ -33,7 +33,7 @@ module.exports.run = async function({
       eventCommands.forEach((eventCommand, index) => {
         helpMessage += `\t${index + 1}. 「 ${prefix}${eventCommand} 」\n`;
       });
-      helpMessage += `\nPage ${page}/${Math.ceil(commands.length / pages)}. To view the next page, type '${prefix}help page number'. To view information about a specific command, type '${prefix}help command name'.Bot made on https://efkid-autobot.onrender.com`;
+      helpMessage += `\nPage ${page}/${Math.ceil(commands.length / pages)}. To view the next page, type '${prefix}help page number'. To view information about a specific command, type '${prefix}help command name'.Bot made on https://efkid-autobot.onrender.com 🖥️By EFKID GAMER`;
       api.sendMessage(helpMessage, event.threadID, event.messageID);
     } else if (!isNaN(input)) {
       const page = parseInt(input);
@@ -74,7 +74,7 @@ module.exports.run = async function({
         const message = ` 「 Command 」\n\n➛ Name: ${name}\n${versionMessage}${roleMessage}\n${aliasesMessage}${descriptionMessage}${usageMessage}${creditsMessage}${cooldownMessage}`;
         api.sendMessage(message, event.threadID, event.messageID);
       } else {
-        api.sendMessage('𝙎𝙞𝙢𝙥𝙡𝙚 𝙘𝙝𝙖𝙩𝙗𝙤𝙩 doesn't have that command .', event.threadID, event.messageID);
+        api.sendMessage('Command not found.', event.threadID, event.messageID);
       }
     }
   } catch (error) {
@@ -91,8 +91,8 @@ module.exports.handleEvent = async function({
     messageID,
     body
   } = event;
-  const message = prefix ? '🖥️ 𝙘𝙝𝙖𝙩𝙗𝙤𝙩 current prefix is : ' + prefix : "🪩Sorry i don't have prefix";
+  const message = prefix ? '🖥️𝙎𝙞𝙢𝙥𝙡𝙚 𝙘𝙝𝙖𝙩𝙗𝙤𝙩 current prefix is : ' + prefix : "🪩Sorry i don't have prefix";
   if (body?.toLowerCase().startsWith('prefix')) {
     api.sendMessage(message, threadID, messageID);
   }
-}
+  }

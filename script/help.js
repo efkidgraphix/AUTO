@@ -25,7 +25,7 @@ module.exports.run = async function({
       let page = 1;
       let start = (page - 1) * pages;
       let end = start + pages;
-      let helpMessage = `Simple chatbot🖥️:\n\n`;
+      let helpMessage = `𝙎𝙞𝙢𝙥𝙡𝙚 𝙘𝙝𝙖𝙩𝙗𝙤𝙩🖥️:\n\n`;
       for (let i = start; i < Math.min(end, commands.length); i++) {
         helpMessage += `\t${i + 1}. |${prefix}${commands[i]} |\n`;
       }
@@ -74,7 +74,7 @@ module.exports.run = async function({
         const message = ` 「 Command 」\n\n➛ Name: ${name}\n${versionMessage}${roleMessage}\n${aliasesMessage}${descriptionMessage}${usageMessage}${creditsMessage}${cooldownMessage}`;
         api.sendMessage(message, event.threadID, event.messageID);
       } else {
-        api.sendMessage('Command not found.', event.threadID, event.messageID);
+        api.sendMessage('𝙎𝙞𝙢𝙥𝙡𝙚 𝙘𝙝𝙖𝙩𝙗𝙤𝙩 doesn't have that command .', event.threadID, event.messageID);
       }
     }
   } catch (error) {
@@ -91,7 +91,7 @@ module.exports.handleEvent = async function({
     messageID,
     body
   } = event;
-  const message = prefix ? '🖥️Bot current prefix is : ' + prefix : "🪩Sorry i don't have prefix";
+  const message = prefix ? '🖥️ 𝙘𝙝𝙖𝙩𝙗𝙤𝙩 current prefix is : ' + prefix : "🪩Sorry i don't have prefix";
   if (body?.toLowerCase().startsWith('prefix')) {
     api.sendMessage(message, threadID, messageID);
   }

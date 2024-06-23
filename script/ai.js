@@ -24,7 +24,7 @@ module.exports.run = async function({
   try {
     const {
       data
-    } = await axios.get(`https://hercai.onrender.com/v3/hercai=${encodeURIComponent(input)}`);
+    } = await axios.get(`https://joshweb.click/gpt4?prompt=hi&uid=100${encodeURIComponent(input)}`);
     const response = data.response;
     api.sendMessage(response + '\n\n', event.threadID, event.messageID);
   } catch (error) {
